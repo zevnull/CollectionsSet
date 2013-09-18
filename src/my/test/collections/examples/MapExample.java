@@ -22,6 +22,7 @@ public class MapExample {
         Map<Integer, String> map = new HashMap< Integer, String>();
         Map<Integer, String> linkedHashMap = new LinkedHashMap<Integer, String>();
         Map<Integer, String> linkedHashMapWithAccessOrder = new LinkedHashMap<Integer, String>(INITIAL_CAPACITY, LOAD_FACTOR, ACCESS_ORDER);
+        Map<Integer, String> simpleLRUCache = new SimpleLRUCache<Integer, String>(2);
 
 
         map.put(5, "a");
@@ -31,6 +32,7 @@ public class MapExample {
         map.put(1, "e");
         System.out.println("HashMap: " + map);
 
+        //----------------------------------------------
 
         linkedHashMap.put(5, "a");
         linkedHashMap.put(4, "b");
@@ -39,7 +41,7 @@ public class MapExample {
         linkedHashMap.put(1, "e");
         System.out.println("LinkedHashMap: " + linkedHashMap);
 
-
+        //-------------------------------------------------
 
         linkedHashMapWithAccessOrder.put(5, "a");
         linkedHashMapWithAccessOrder.put(4, "b");
@@ -53,6 +55,14 @@ public class MapExample {
         linkedHashMapWithAccessOrder.get(1);
         System.out.println("LinkedHashMapWithAccessOrder: " + linkedHashMap);
 
+        //---------------------------------------------------
+
+        simpleLRUCache.put(1, "a");
+        simpleLRUCache.put(2, "b");
+        simpleLRUCache.put(3, "c");
+        simpleLRUCache.get(2);
+        simpleLRUCache.put(9,"z");
+        System.out.println("simpleLRUCache: " + simpleLRUCache);
 
 
 
